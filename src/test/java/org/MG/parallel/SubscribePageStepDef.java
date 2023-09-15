@@ -1,4 +1,4 @@
-package org.MG.stepdefs;
+package org.MG.parallel;
 
 import io.cucumber.java.en.Given;
         import io.cucumber.java.en.Then;
@@ -13,9 +13,9 @@ public class SubscribePageStepDef {
     private SubscribePage subscribePage = new SubscribePage(DriverFactory.getDriver());
 
     @Given("user navigate to the stc tv website {string}")
-    public void navigateToSubscribePage(String url) {
+    public void navigateToSubscribePage(String Country) {
         // navigate to the stc tv website
-        DriverFactory.getDriver().get("https://subscribe.stctv.com/"+url+"-en");
+       subscribePage.navigateToURL(Country);
     }
 
     @When("user on the selected {string}")
@@ -23,9 +23,9 @@ public class SubscribePageStepDef {
         subscribePage.selectCountry();
     }
 
-    @Then("I should see the subscription packages")
-    public void verifySubscriptionPage() {
-        Assert.assertEquals(subscribePage.checkPackageTypes(),"[lite, classic, premium]");
+    @Then("I should see the subscription {string}")
+    public void verifySubscriptionPage(String packageType) {
+        Assert.assertEquals(subscribePage.checkPackageTypes(packageType),packageType);
     }
 
     @Then("I should see the features included in each package")
@@ -36,5 +36,18 @@ public class SubscribePageStepDef {
     @When("user loaded successfully to {string} page")
     public void userLoadedSuccessfullyToPage(String Country) {
         Assert.assertEquals(subscribePage.checkCountry(), Country);
+    }
+
+    @Then("verify Price List")
+    public void verifyPriceList() {
+//        subscribePage.checkPrice();
+    }
+
+    @Then("I should see the subscription {string}, {string} and {string}")
+    public void iShouldSeeTheSubscriptionPackageTypePriceAndCurrency(String packageType, String Price, String currency) {
+        Assert.assertEquals(subscribePage.checkPackageTypes(packageType),packageType);
+        Assert.assertEquals(subscribePage.checkPrice(packageType),Price);
+        Assert.assertEquals(subscribePage.GetCurrency(packageType),currency);
+
     }
 }

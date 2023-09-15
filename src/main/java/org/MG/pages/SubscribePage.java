@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utilities.Actions;
+import utilities.DriverFactory;
 
 import java.util.Arrays;
 
@@ -25,7 +26,17 @@ public class SubscribePage {
     private By packageFeatures = By.cssSelector(".package-features");
 
     String[] packageTypes = new String[]{"lite", "classic", "premium"};
+    String[] priceList = new String[]{"15 SAR/month","15 SAR/month","15 SAR/month"};
 
+    public void navigateToURL(String country){
+
+        switch (country) {
+            case "KSA" -> driver.navigate().to("https://subscribe.stctv.com/sa-en");
+            case "Bahrain" -> driver.navigate().to("https://subscribe.stctv.com/bh-en");
+            case "Kuwait" -> driver.navigate().to("https://subscribe.stctv.com/kw-en");
+            default -> System.out.println("Can not reach to the navigation url");
+        }
+    }
     public void selectCountry() {
         // select the provided country from the dropdown
         WebElement dropdown = driver.findElement(countryDropdown);
@@ -37,17 +48,19 @@ public class SubscribePage {
         return driver.findElement(currentContryName).getText();
     }
 
-    public String checkPackageTypes() {
-        for (String type : packageTypes
-        ) {
-            driver.findElement(By.id("name-"+type)).getText();
-        }
-        return Arrays.toString(packageTypes);
+    public String checkPackageTypes(String  type) {
+
+       return driver.findElement(By.id("name-"+type)).getText().toLowerCase();
     }
 
-    public String GetCurrency() {
-        String price = driver.findElement(By.id("currency-lite")).getText();
-        return trimCurrencyFromPrice(price);
+    public String checkPrice(String  type) {
+
+        return driver.findElement(By.id("currency-"+type)).getText();
+    }
+
+    public String GetCurrency(String  type) {
+
+        return trimCurrencyFromPrice(driver.findElement(By.id("currency-"+type)).getText());
     }
 
     public static String trimCurrencyFromPrice(String price) {
