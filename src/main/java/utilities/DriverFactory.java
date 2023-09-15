@@ -19,7 +19,7 @@ public class DriverFactory {
      * @param browser
      * @return this will return tldriver.
      */
-    public WebDriver init_driver(String browser) {
+    public static WebDriver init_driver(String browser) {
 
         System.out.println("browser value is: " + browser);
 

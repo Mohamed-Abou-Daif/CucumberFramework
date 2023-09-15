@@ -38,11 +38,6 @@ public class SubscribePageStepDef {
         Assert.assertEquals(subscribePage.checkCountry(), Country);
     }
 
-    @Then("verify Price List")
-    public void verifyPriceList() {
-//        subscribePage.checkPrice();
-    }
-
     @Then("I should see the subscription {string}, {string} and {string}")
     public void iShouldSeeTheSubscriptionPackageTypePriceAndCurrency(String packageType, String Price, String currency) {
         Assert.assertEquals(subscribePage.checkPackageTypes(packageType),packageType);
