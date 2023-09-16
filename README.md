@@ -24,8 +24,9 @@ Make sure you have the following software installed on your system:
 - Clone the Repository: Clone this repository to your local machine using the following command:
 - git clone https://github.com/Mohamed-Abou-Daif/CucumberFramework.git
 
-# Configuration: Update the necessary configuration files to match your testing environment:
+# Configuration: 
 
+- Update the necessary configuration files to match your testing environment:
 - Update src/test/resources/config.properties with your application's URL and other relevant settings.
 - Configure the WebDriver settings in src/test/resources/driver.properties.
 
