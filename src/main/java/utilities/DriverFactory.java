@@ -6,8 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.time.Duration;
-
 public class DriverFactory {
 
     public WebDriver driver;
@@ -21,7 +19,7 @@ public class DriverFactory {
      * @param browser
      * @return this will return tldriver.
      */
-    public WebDriver init_driver(String browser) {
+    public static WebDriver init_driver(String browser) {
 
         System.out.println("browser value is: " + browser);
 
@@ -40,8 +38,6 @@ public class DriverFactory {
 
         getDriver().manage().deleteAllCookies();
         getDriver().manage().window().maximize();
-        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(CommonUtils.PAGE_LOAD_TIME));
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(CommonUtils.IMPLICIT_WAIT_TIME));
         return getDriver();
 
     }
