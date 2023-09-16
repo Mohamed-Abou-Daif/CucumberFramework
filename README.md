@@ -35,7 +35,9 @@ Make sure you have the following software installed on your system:
 - cd CucumberFramework
 - mvn clean install
 
-# Run Tests: Execute the test suite using Maven:
+# Run Tests: 
+-Execute the test suite using Maven:
+
 - mvn test
 
 # View Reports: 
