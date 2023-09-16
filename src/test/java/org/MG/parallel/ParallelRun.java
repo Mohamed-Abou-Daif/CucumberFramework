@@ -7,7 +7,8 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"pretty",
                 "timeline:test-output-thread/",
-                "rerun:target/failedrun.txt"
+                "rerun:target/failedrun.txt",
+                "html:target/CumcumberReport/CumcumberReport.html"
         },
         tags = "not @Skip",
         monochrome = true,
