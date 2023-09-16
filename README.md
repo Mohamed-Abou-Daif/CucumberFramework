@@ -1,18 +1,20 @@
-CucumberFramework
+#CucumberFramework
 Welcome to the CucumberFramework repository! This framework provides a structured approach to automate and test your software applications using Cucumber and Selenium WebDriver.
 
-Features
+#Features
 BDD Support: Leverage the power of Behavior-Driven Development (BDD) to write your tests in a human-readable format using Gherkin syntax.
 Modular Architecture: The framework follows a modular design, allowing you to organize and manage your test suites, step definitions, and page objects effectively.
 Cross-Browser Testing: Run your tests across multiple browsers such as Chrome, Firefox, and Safari, ensuring compatibility and consistent behavior.
 Parallel Execution: Execute your test scenarios in parallel, significantly reducing the overall test execution time.
 Reporting: Generate comprehensive HTML reports with detailed test results, including passed and failed scenarios, step definitions, and screenshots.
-Getting Started
+
+#Getting Started
 To get started with the CucumberFramework, follow these steps:
 
-Prerequisites: Make sure you have the following software installed on your system:
+#Prerequisites: 
+Make sure you have the following software installed on your system:
 
-Java Development Kit (JDK) 8 or higher
+Java Development Kit (JDK) 20
 Apache Maven
 Web browsers you want to test (e.g., Chrome, Firefox)
 ChromeDriver and GeckoDriver for WebDriver configuration
