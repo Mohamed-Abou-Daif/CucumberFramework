@@ -11,7 +11,6 @@ Welcome to the CucumberFramework repository! This framework provides a structure
 - Reporting: Generate comprehensive HTML reports with detailed test results, including passed and failed scenarios, step definitions, and screenshots.
 
 # Getting Started
-
 To get started with the CucumberFramework, follow these steps:
 
 # Prerequisites: 
@@ -30,7 +29,9 @@ Make sure you have the following software installed on your system:
 - Update src/test/resources/config.properties with your application's URL and other relevant settings.
 - Configure the WebDriver settings in src/test/resources/driver.properties.
 
-# Install Dependencies: Navigate to the project root directory and install the required dependencies using Maven:
+# Install Dependencies: 
+
+-Navigate to the project root directory and install the required dependencies using Maven:
 - cd CucumberFramework
 - mvn clean install
 
